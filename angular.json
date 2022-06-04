@@ -3,5 +3,37 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "fin-saas-formula-editor": {
+      "projectType": "library",
+      "root": "projects/fin-saas-formula-editor",
+      "sourceRoot": "projects/fin-saas-formula-editor/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/fin-saas-formula-editor/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/fin-saas-formula-editor/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/fin-saas-formula-editor/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/fin-saas-formula-editor/src/test.ts",
+            "tsConfig": "projects/fin-saas-formula-editor/tsconfig.spec.json",
+            "karmaConfig": "projects/fin-saas-formula-editor/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "fin-saas-formula-editor"
 }
